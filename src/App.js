@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
+
+function IAmAH1() {
+  return <h1> Hello , This is testing</h1>
+}
 
 function App() {
   return (
-    <div className="app">
-        <header className="div">
-            <h1 className="name">Spantheslayer Isnab</h1>
-        </header>
-    </div>
+    <IAmAH1 />
   );
 }
 
-export default App;
+export default App
