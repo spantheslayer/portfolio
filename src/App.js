@@ -1,5 +1,6 @@
 import React from 'react'
 import "./App.css"
+import ListItems from './ListItems'
 
 class App extends React.Component {
   constructor(props){
@@ -24,6 +25,17 @@ class App extends React.Component {
   }
   addItem(e){
     e.preventDefault()
+    const newItem = this.state.currentItem
+    if(newItem.text!==""){
+      const newItems=[...this.state.items, newItem]
+      this.setState({
+        items:newItems,
+        currentItem:{
+          text:'',
+          key:''
+        }
+      })
+    }
   }
   render() {
     return (
@@ -34,6 +46,7 @@ class App extends React.Component {
               <button type="submit">Add</button>
             </form>
           </header>
+          <ListItems items = {this.state.items}></ListItems>
       </div>
     )
   }
